@@ -3,7 +3,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         id        = "practica.xpo.mobil"
         version   = "1.0.0">
-    <name>ABC</name>
+    <name>Proyecto Xpo Mobile</name>
 
     <description>
         Es un proyecto para practicar
