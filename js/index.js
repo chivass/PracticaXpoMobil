@@ -25,6 +25,8 @@ var app = {
 		cuerpo.className = 'page center';
 		menuprincipal.className = 'page center';
 		wrapper.className = 'cssClass';
+
+		
 			
 		// Leemos por ajax el archivos opcion1.html de la carpeta opciones
 		xhReq.open("GET", "opciones/opcion1.html", false);
@@ -37,7 +39,11 @@ var app = {
 		document.getElementById("contenidoMenu").innerHTML=xhReq.responseText;
 		
 		// Creamos los 2 scroll mediante el plugin iscroll, uno para el menœ principal y otro para el cuerpo
-		myScroll = new iScroll('wrapper', { hideScrollbar: true });
+		myScroll = new iScroll('wrapper', { hideScrollbar: true, 
+			onBeforeScrollStart: function (e) {
+				var nodeType = e.explicitOriginalTarget ? e.explicitOriginalTarget.nodeName.toLowerCase():(e.target ? e.target.nodeName.toLowerCase():""); 
+				if(nodeType !='select' && nodeType !='option' && nodeType !='input' && nodeType!='textarea') e.preventDefault(); } }); 
+
 		myScrollMenu = new iScroll('wrapperMenu', { hideScrollbar: true });
 	
         this.bindEvents();
@@ -87,6 +93,7 @@ function menu(opcion){
 		}
 	// Si pulsamos un bot—n del menu principal entramos en el else
 	}else{
+
 		
 		// A–adimos la clase al li presionado
 		addClass('li-menu-activo' , document.getElementById("ulMenu").getElementsByTagName("li")[opcion]);
