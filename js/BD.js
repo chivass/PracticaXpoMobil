@@ -14,4 +14,5 @@ function errorCB(err) {
     alert("Error processing SQL: Codigo: " + err.code + " Mensaje: "+err.message);
 }
 function successCB() {
+	alert("BAse de datos creada")
 }
