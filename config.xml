@@ -2,7 +2,7 @@
 
 <widget xmlns     = "Link3r"
         id        = "pratica.xpo.mobile"
-        version   = "1.0.1">
+        version   = "1.0.2">
     <name>PracticaMobile</name>
 
     <description>
